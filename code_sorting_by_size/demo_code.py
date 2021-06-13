@@ -2,33 +2,44 @@
 
 from code import Packer, Container, Box
 
-#Step1
+#Step1 
 NewPacker = Packer()
 
 #Step2 add Container        # name, width, height, depth, max_weight
-NewPacker.add_bin(Container('Container1', 1000, 1000, 1000, 700.0))
+NewPacker.add_bin(Container('Container1', 500, 250, 500, 2500.0))
 
 #Step3 add Box
 #						# name, width, height, depth, weight
-NewPacker.add_item(Box('50g [Box 1]', 50, 50, 50, 50)) 
-NewPacker.add_item(Box('100g [Box 2]', 100, 100, 100, 100))
-NewPacker.add_item(Box('200g [Box 3]', 200, 200, 200, 200))
-
-NewPacker.add_item(Box('150g [Box 4]', 150, 150, 150, 150)) 
-NewPacker.add_item(Box('300g [Box 5]', 300, 300, 300, 300))
-NewPacker.add_item(Box('350g [Box 6]', 350, 350, 350, 350)) 
-
-
-# NewPacker.add_item(Box('250g [Box 4]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 5]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 6]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 7]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 8]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 9]', 149, 149, 249, 5))
-# NewPacker.add_item(Box('250g [Box 10]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 11]', 150, 150, 250, 5))
-# NewPacker.add_item(Box('250g [Box 12]', 150, 150, 250, 5))
-
+NewPacker.add_item(Box('[Box 1]', 50, 50, 50, 50)) 
+NewPacker.add_item(Box('[Box 2]', 50, 50, 50, 50))
+NewPacker.add_item(Box('[Box 3]', 50, 50, 50, 50))
+NewPacker.add_item(Box('[Box 4]', 50, 50, 50, 50)) 
+NewPacker.add_item(Box('[Box 5]', 80,  100, 80, 80))
+NewPacker.add_item(Box('[Box 6]', 80, 100, 80, 80)) 
+NewPacker.add_item(Box('[Box 7]', 80, 50, 80, 80))
+NewPacker.add_item(Box('[Box 8]', 80, 50, 80, 80)) 
+NewPacker.add_item(Box('[Box 9]', 100, 100, 100, 100))
+NewPacker.add_item(Box('[Box 10]', 100, 100, 100, 100)) 
+NewPacker.add_item(Box('[Box 11]', 100, 100, 100, 100)) 
+NewPacker.add_item(Box('[Box 12]', 50, 50, 150, 50))
+NewPacker.add_item(Box('[Box 13]', 50, 50, 150, 50))
+NewPacker.add_item(Box('[Box 14]', 100, 150, 150, 80)) 
+NewPacker.add_item(Box('[Box 15]', 100, 100, 150, 80))
+NewPacker.add_item(Box('[Box 16]', 100, 100, 150, 80)) 
+NewPacker.add_item(Box('[Box 17]', 100, 100, 150, 80))
+NewPacker.add_item(Box('[Box 18]', 100, 50, 100, 50)) 
+NewPacker.add_item(Box('[Box 19]', 100, 50, 100, 50))
+NewPacker.add_item(Box('[Box 20]', 100, 50, 100, 50))
+NewPacker.add_item(Box('[Box 21]', 100, 100, 100, 50)) 
+NewPacker.add_item(Box('[Box 22]', 50, 50, 50, 100))
+NewPacker.add_item(Box('[Box 23]', 50, 50, 50, 100))
+NewPacker.add_item(Box('[Box 24]', 100, 150, 150, 100)) 
+NewPacker.add_item(Box('[Box 25]', 100, 100, 150, 100))
+NewPacker.add_item(Box('[Box 26]', 100, 100, 150, 80)) 
+NewPacker.add_item(Box('[Box 27]', 100, 100, 150, 80))
+NewPacker.add_item(Box('[Box 28]', 100, 50, 100, 50)) 
+NewPacker.add_item(Box('[Box 29]', 100, 50, 100, 50))
+NewPacker.add_item(Box('[Box 30]', 100, 50, 100, 50))
 
 NewPacker.pack(sorting_by_size=True)
 
