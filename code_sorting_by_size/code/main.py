@@ -99,9 +99,9 @@ class Container:
             dimension = item.get_dimension()
             
             if (
-                self.width <= pivot[0] + dimension[0] or
-                self.height <= pivot[1] + dimension[1] or
-                self.depth <= pivot[2] + dimension[2]
+                self.width < pivot[0] + dimension[0] or
+                self.height < pivot[1] + dimension[1] or
+                self.depth < pivot[2] + dimension[2]
             ):
                 continue
 
@@ -164,10 +164,10 @@ class Packer:
                 w, h, d = ib.get_dimension()
                 if axis == Axis.WIDTH:
                     pivot = [
-                        ib.position[0] + w,
+                        ib.position[0] + w, 
                         ib.position[1],
                         ib.position[2]
-                    ]
+                    ] 
                 elif axis == Axis.HEIGHT:
                     pivot = [
                         ib.position[0],
@@ -186,6 +186,48 @@ class Packer:
                     break
             if fitted:
                 break
+
+    # def pack_to_bin(self, bin, item):
+    #     fitted = False
+
+    #     if not bin.items:
+    #         response = bin.put_item(item, START_POSITION)
+
+    #         if not response:
+    #             bin.unfitted_items.append(item)
+
+    #         return
+
+    #     for axis in range(0, 3):
+    #         items_in_bin = bin.items
+
+    #         for ib in items_in_bin:
+    #             pivot = [0, 0, 0]
+    #             w, h, d = ib.get_dimension()
+    #             if axis == Axis.WIDTH:
+    #                 pivot = [
+    #                     ib.position[0] + w, 
+    #                     ib.position[1],
+    #                     ib.position[2]
+    #                 ] 
+    #             elif axis == Axis.HEIGHT:
+    #                 pivot = [
+    #                     ib.position[0],
+    #                     ib.position[1] + h,
+    #                     ib.position[2]
+    #                 ]
+    #             elif axis == Axis.DEPTH:
+    #                 pivot = [
+    #                     ib.position[0],
+    #                     ib.position[1],
+    #                     ib.position[2] + d
+    #                 ]
+
+    #             if bin.put_item(item, pivot):
+    #                 fitted = True
+    #                 break
+    #         if fitted:
+    #             break
 
         if not fitted:
             bin.unfitted_items.append(item)
@@ -232,7 +274,7 @@ class Packer:
             quickSort(arr, pi+1, high)
         
     def pack(
-        self, sorting_by_size=False, distribute_items=False,
+        self, sorting_by_size=True, distribute_items=True,
         number_of_decimals=DEFAULT_NUMBER_OF_DECIMALS
     ):
         for bin in self.bins:
