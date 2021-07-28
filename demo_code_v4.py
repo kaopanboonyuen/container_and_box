@@ -51,7 +51,7 @@ NewPacker.add_item(Box('[Box 38]', 50, 55, 25, 100))
 NewPacker.add_item(Box('[Box 39]', 50, 55, 25, 100))
 NewPacker.add_item(Box('[Box 40]', 50, 55, 25, 250000))
 
-NewPacker.pack(status='Normal') # 'Normal', 'Size', 'Height'
+NewPacker.pack(status='Size') # 'Normal', 'Size', 'Height'
 
 for b in NewPacker.bins:
     print(":::::::::::", b.string())
